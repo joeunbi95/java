@@ -1,0 +1,57 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Foodmanager implements Productinterface{
+	
+	private ArrayList<products> menuList = new ArrayList<>();
+	private ArrayList<products> order = new ArrayList<>();	
+	
+	public void addmenu() {
+		menuList.add(new products("햄버거",7000));
+		menuList.add(new products("피자",15000));
+		menuList.add(new products("콜라",2000));
+		menuList.add(new products("치킨너겟",2000));
+		menuList.add(new products("소프트콘",500));
+	}
+	
+	//메뉴추가
+	@Override
+	public void add(Scanner sc) {
+		System.out.println("추가할 메뉴>");	
+		String menu = sc.next();
+		System.out.println("추가할 메뉴 가격>");
+		int price = sc.nextInt();
+		menuList.add(new products(menu,price));			
+	}	
+
+	@Override
+	public void printProduct() {
+		for(int i=0; i<menuList.size(); i++) {
+			System.out.println(menuList.get(i).getMenu()+"금액 : "+menuList.get(i).getPrice()+"원");
+		}		
+	}
+
+	@Override
+	public void orderPick(Scanner sc) {
+		System.out.println("제품명>");
+		String name = sc.next();
+		System.out.println("수량>");
+		int count = sc.nextInt();
+		
+		for(int i=0; i<menuList.size(); i++) {
+			if(menuList.get(i).getMenu().equals(name)) {
+				
+			}
+		}
+		
+	}
+
+	@Override
+	public void printOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

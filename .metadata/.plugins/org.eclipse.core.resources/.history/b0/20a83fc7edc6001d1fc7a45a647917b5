@@ -1,0 +1,120 @@
+package day15;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordManager implements WordInterface{
+	private StringBuffer sb = new StringBuffer();
+	private ArrayList<Word> word = new ArrayList<>();
+	private HashMap<String, String> map = new HashMap<>();
+		
+
+	@Override
+	public void insertword(Scanner sc) {
+		System.out.println("추가할 단어를 입력하세요>");
+		String word = sc.next();
+		System.out.println("단어의 뜻을 입력하세요>");
+		//nextList() : 공백을 포함
+		sc.nextLine();//위에서 입력한 enter를 버려주는역할
+		String mean = sc.nextLine();
+		this.word.add(new Word(word,mean));
+		sb.append(word);
+		sb.append(' ');
+		sb.append(mean);
+		sb.append('\n');
+		map.put(word, mean);		
+	}
+	
+
+	@Override
+	public void printword() {
+		//정렬
+		Collections.sort(word, new Comparator<Word>() {
+
+			@Override
+			public int compare(Word o1, Word o2) {
+				// TODO Auto-generated method stub
+				return o1.getWord().compareTo(o2.getWord());
+			}
+		});
+		System.out.println("---단어장---");	
+		for(Word w : word) {
+			System.out.println(w.toString());
+		}
+		System.out.println("-----------");
+	}
+
+	@Override
+	public void searchword(Scanner sc) {
+		System.out.println("검색할 단어>");
+		String Name = sc.next();
+		
+		
+		int index=-1;
+		for(int i=0; i<word.size(); i++) {
+			if(word.get(i).getWord().equals(Name)) {
+				System.out.println("---단어장---");
+				System.out.println(word.get(i));
+				System.out.println("-----------");
+				index=i;
+				break;
+			}
+			if(index == -1) {
+				System.out.println("단어가 존재하지 않습니다.");
+			}
+		}
+		
+	}
+
+	@Override
+	public void updateword(Scanner sc) {
+		System.out.println("수정할 단어>");
+		String udword = sc.next();
+		System.out.println("수정할 뜻>");
+		String udmean = sc.next();
+		int index = -1;
+		for(int i=0; i<word.size();i++) {
+			if(word.get(i).getWord().equals(udword)) {
+				word.get(i).setWord(udword);
+				word.get(i).setMean(udmean);
+				System.out.println("단어가 수정되었습니다.");
+				index=i;
+				break;
+			}
+		}
+		if(index == -1) {
+			System.out.println("단어가 존재하지 않습니다.");
+		}
+	}
+
+	@Override
+	public void deleteword(Scanner sc) {
+		System.out.println("삭제할 단어>");
+		String delword = sc.next();
+		int index = -1;
+		for(int i=0; i<word.size(); i++) {
+			if(word.get(i).getWord().endsWith(delword)) {
+				word.remove(i);
+				System.out.println("단어가 삭제되었습니다.");
+				index=i;
+				break;
+			}
+		}
+		if(index == -1) {
+			System.out.println("단어가 존재하지 않습니다.");
+		}
+		
+	}
+
+
+	@Override
+	public void filePrint() {
+		
+		
+		
+	}	
+	
+}

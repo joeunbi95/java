@@ -1,0 +1,62 @@
+package day15;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class WordManager implements WordInterface{
+	
+	private ArrayList<Word> word = new ArrayList<>();
+
+	@Override
+	public void insertword(Scanner sc) {
+		System.out.println("추가할 단어를 입력하세요>");
+		String word = sc.next();
+		System.out.println("단어의 뜻을 입력하세요>");
+		String mean = sc.next();
+		this.word.add(new Word(word,mean));		
+	}
+
+	@Override
+	public void printword() {
+		System.out.println("---단어장---");
+		for(Word w : word) {
+			System.out.println(w);
+		}
+		System.out.println("-----------");
+	}
+
+	@Override
+	public void searchword(Scanner sc) {
+		System.out.println("검색할 단어>");
+		String wordName = sc.next();
+		int index=-1;
+		for(int i=0; i<word.size(); i++) {
+			if(word.get(i).getWord().equals(wordName)) {
+				System.out.println(word.get(i));
+				index=i;
+				break;
+			}
+			if(index == -1) {
+				System.out.println("단어가 존재하지 않습니다.");
+			}
+		}
+		
+	}
+
+	@Override
+	public void updateword(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteword(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void Searcprint() {
+		System.out.println();
+	}
+
+}

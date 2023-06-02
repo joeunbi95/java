@@ -1,0 +1,41 @@
+package day15;
+
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegulerExpressionEx {
+
+	public static void main(String[] args) {
+		// RegulerExpression : 정규표현식
+		// 문자의 형식을 검증하는 형태
+		// 전화번호, 비밀번호 
+		// [a-zA-Z] : 대소문자 가능
+		// \d : 숫자
+		// . : 모든 문자중에 한개의 문지
+		// ? : 없음 또는 1개, * : 없음 또는 1개이상
+		// {3,} : 3자리 이상
+		// (02|010)-\b{3,4}-\b{3,4} => 010-111-1111 02-111-1111
+		
+		String[] strArr = {"bat", "baby", "car", "cb", "date",
+				"disk", "count", "apple", "banana"};
+		Arrays.sort(strArr); // 배열 정렬
+		for(int i=0; i<strArr.length; i++) {
+			System.out.print(strArr[i]+" ");
+		}
+		System.out.println();
+		System.out.println("---------------------");
+		
+		Pattern pattern = Pattern.compile("b[a-zA-Z]*");
+		for(String str : strArr) {
+			Matcher matcher = pattern.matcher(str); 
+			if(matcher.matches()) { // 패턴이 일치가되면 true를 반환
+				System.out.println(str+" ");
+			}
+		}
+		
+		
+		
+	}
+
+}

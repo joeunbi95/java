@@ -1,0 +1,52 @@
+package product;
+
+import java.util.ArrayList;
+
+public class product {
+	
+	private String menu;
+	private int price;
+	
+	public product(){}
+	
+	public product(String menu, int price) {
+		this.menu=menu;
+		this.price=price;		
+	}
+	
+	public void printMenu() {
+		System.out.println("┌──── 메 뉴 판 ────┐");		
+		System.out.println("│1.불고기버거 $7000 │");
+		System.out.println("│2.쿼트로피자 $12000│");
+		System.out.println("│3.제로콕콜라 $2000 │");
+		System.out.println("│4.닭다리너겟 $2000 │");
+		System.out.println("│5.아이스크림 $500  │");
+		System.out.println("│0 주 문 종 료  ㅋ  │");
+		System.out.println("└──── 고 르 셈 ────┘");		
+	}
+	
+	public void pricelist() {
+		ArrayList<Integer> price = new ArrayList<Integer>();
+		price.add(7000);
+		price.add(12000);
+		price.add(2000);
+		price.add(2000);
+		price.add(500);
+	}
+
+	public String getMenu() {
+		return menu;
+	}
+
+	public void setMenu(String menu) {
+		this.menu = menu;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+}

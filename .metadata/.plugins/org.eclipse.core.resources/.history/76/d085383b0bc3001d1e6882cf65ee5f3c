@@ -1,0 +1,51 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Foodmanager implements Probuctinterface{
+	
+	private ArrayList<product> menu = new ArrayList<>();
+	private ArrayList<product> order = new ArrayList<>();
+	
+	private product[] food = new product[5];
+	private int foodCount;
+	
+	
+	//메뉴추가
+	@Override
+	public void add(Scanner sc) {
+		System.out.println("추가할 메뉴>");	
+		String menu = sc.next();
+		System.out.println("추가할 메뉴 가격>");
+		int price = sc.nextInt();
+		this.menu.add(new product(menu,price));
+			
+	}	
+	
+	public void addmenu() {
+		menu.add(new product("햄버거",7000));
+		menu.add(new product("피자",15000));
+		menu.add(new product("콜라",2000));
+		menu.add(new product("치킨너겟",2000));
+		menu.add(new product("소프트콘",500));
+	}
+
+	@Override
+	public void menuorder(String name, int count) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ordertotal() {
+		int sum =0;
+		System.out.println("===주문내역===");
+		
+	}
+	public void printfoodmenu(product f) {
+		System.out.println("");
+		f.foodPrint();
+		
+	}
+}

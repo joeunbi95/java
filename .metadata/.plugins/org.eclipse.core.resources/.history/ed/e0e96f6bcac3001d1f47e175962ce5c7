@@ -1,0 +1,43 @@
+package day15;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class WordManager implements WordInterface{
+	
+	private ArrayList<Word> word = new ArrayList<>();
+
+	@Override
+	public void insertword(Scanner sc) {
+		System.out.println("추가할 단어를 입력하세요>");
+		String word = sc.next();
+		System.out.println("단어의 뜻을 입력하세요>");
+		String mean = sc.next();
+		this.word.add(new Word(word,mean));		
+	}
+
+	@Override
+	public void printword(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void searchword(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateword(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteword(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

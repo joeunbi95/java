@@ -1,0 +1,10 @@
+package day15;
+
+public class StringBufferEx {
+
+	public static void main(String[] args) {
+		// String 객체 : 문자열을 표현
+
+	}
+
+}

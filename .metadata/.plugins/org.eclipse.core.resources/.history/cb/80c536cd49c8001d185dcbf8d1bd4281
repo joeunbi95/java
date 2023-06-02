@@ -1,0 +1,16 @@
+package 과제;
+
+public class 시험 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x =10;
+		int y= -10;
+		int aX = (x>=0)? x:-x;
+		int ay = (y>=0)? y:-y;
+		System.out.println("x=" + aX);
+		System.out.println("y=" + aY);
+	}
+	
+
+}

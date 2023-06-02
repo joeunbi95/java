@@ -1,0 +1,61 @@
+package day16;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class EnglishDictionary {
+
+}
+
+class Dictionary{
+	
+}
+
+class Word{
+	//hello = 안녕, 아침인사, 반가움, 비슷한말 hi...
+	private Map<String, ArrayList<String>> words = new HashMap<>();
+	
+	/* y를 입력하면 단어를 입력, n을 입력하면 종료
+	 * 단어가 이미 있다면 "이미 있는 단어입니다." 등록 금지
+	 * 메서드명 : makeWord
+	 * */
+	
+	public void makeWord(Scanner sc) {
+		ArrayList<String> word = new ArrayList<String>();
+		ArrayList<String> mean = new ArrayList<String>();
+		System.out.println("단어 입력> y | 종료> n");
+		String input = sc.next();
+		do {
+			switch(input) {
+			case "y" : 
+				System.out.println("단어입력>");
+				String word1 = sc.next();
+				word.add(input);
+				for(int i=0; i<word.size(); i++) {
+					if(word.get(i).equals(word1)) {
+						System.out.println("이미 존재하는 단어입니다.");
+					}
+				}
+				System.out.println("뜻입력>");
+				String mean1 = sc.next();
+				mean.add(mean1);
+				System.out.println(word+"다른 뜻 입력>");
+				String mean2 = sc.next();
+				mean.add(mean2);				
+				break;
+			case "n" : 
+				break;
+				default:
+					System.out.println("y|n을 이용해주세요.");
+			}			
+		}while(input!="n"); 
+		sc.close();
+	}
+	
+	/* 단어 출력 메서드
+	 * */
+	
+	
+}

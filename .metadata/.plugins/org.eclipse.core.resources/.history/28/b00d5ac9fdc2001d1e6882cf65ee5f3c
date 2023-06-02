@@ -1,0 +1,38 @@
+package product;
+
+
+import java.util.Scanner;
+
+import studentmanager.Student;
+
+public class Foodmanager extends product{
+	private product[] food = new product[5];
+	private int foodCount;
+	//메뉴추가
+	public void add(Scanner sc) {
+		System.out.println("추가할 메뉴>");	
+		String f = sc.next();
+		System.out.println("추가할 메뉴 가격>");
+		String p = sc.next();
+		
+		product fd = new product(f, p);
+		
+		if(foodCount == food.length) {
+			product[] tmp = new product[foodCount+5]; //새배열
+			System.arraycopy(food,0,tmp,0, foodCount);
+			food= tmp;
+			
+			food[foodCount]=fd;
+			foodCount++; //인원증가(배열 번지 증가)
+		}	
+	}
+		
+	//메인메뉴
+	
+	//메뉴주문
+	
+	//주문내역
+	public void total() {
+		
+	}
+}

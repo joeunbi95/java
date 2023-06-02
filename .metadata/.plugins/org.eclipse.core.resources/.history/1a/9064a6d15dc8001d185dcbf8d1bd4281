@@ -1,0 +1,19 @@
+package 과제;
+
+public class 시험 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+//		int s[5] = {100,80,50,85,90};
+		
+		int[] w = new int[3];
+		
+		int[] m = new int[] {10,9,8};
+		
+		String str = "Hello";
+		System.out.println(str.length());
+	}
+
+}

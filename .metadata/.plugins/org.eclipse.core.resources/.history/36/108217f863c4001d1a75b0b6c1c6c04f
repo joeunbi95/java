@@ -1,0 +1,14 @@
+package day16;
+
+import java.util.Scanner;
+
+public class Dictioneary {
+
+	public static void main(String[] args) {
+		Word ed = new Word();
+		Scanner sc = new Scanner(System.in);
+		
+		ed.makeWord(sc);
+	}
+
+}

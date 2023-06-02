@@ -1,0 +1,69 @@
+package StudentProgrem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManagers implements ProgreemInterface{
+	
+	private ArrayList<Students> std = new ArrayList<>(); 
+
+	@Override
+	public void printStudent() {
+		System.out.println("===학생정보===");
+		for(Students s : std) {
+			System.out.println(s.toString());
+		}
+		
+	}
+
+
+
+	@Override
+	public void insertStudent(Scanner sc) {
+		//학번, 이름, 주민번호, 학부, 학과, 수강과목
+		System.out.println("==학생등록==");
+		System.out.println("이름>");
+		String name = sc.next();
+		System.out.println("학번>");
+		String sNum = sc.next();
+		System.out.println("주민번호>");
+		String rNum = sc.next();
+		System.out.println("학부>");
+		String faculy = sc.next();
+		System.out.println("학과>");
+		String major = sc.next();
+		System.out.println("=========");
+	}
+
+
+
+	@Override
+	public void searchStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void registerSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void deleteSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}	
+	
+	public void printStudentOne(Students s) {
+		System.out.println("--학생정보--");
+		s.stdPrint();
+		System.out.println("--수강정보--");
+		s.subPrint();
+	}
+
+}

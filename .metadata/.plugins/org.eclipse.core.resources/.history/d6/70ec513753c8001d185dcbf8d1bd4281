@@ -1,0 +1,67 @@
+package 시험;
+
+public class Card2 {
+	/* Card2 클래스를 생성 후 전체 카드의 내용을 출력하는 프로그램을 작성하시오
+	 *  - * 카드에 대한 정보를 출력
+	 *  - CardPack2클래스 : 카드 전체를 나타내는 클래스
+	 */
+	
+	private char shape;  // 하트(♥), 클로버(♣), 다이아(◆), 스페이드(♠)
+	private int num;  // A 2~10 J Q K
+	
+	public Card2() {}
+	
+	public Card2(char shape, int num) {
+		shape='♥';
+		num=1;
+	}
+	
+	public void printCard2() {
+		System.out.println(shape);
+		switch(num) {
+		case 1: 
+			System.out.println("A ");
+			break;
+		case 11: 
+			System.out.println("J ");
+			break;
+		case 12: 
+			System.out.println("Q ");
+			break;
+		case 13: 
+			System.out.println("K ");
+			break;	
+		default: 
+			System.out.println(num+" ");
+		}
+	}
+
+	public char getShape() {
+		return shape;
+	}
+
+	public void setShape(char shape) {
+		switch(shape) {
+		case '♥':case '◆':case '♣':case '♠':
+			this.shape=shape;
+			break;			
+		default :
+			this.shape='♥';			
+		}
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		if(num>1 || num<=13) {			
+			this.num=num;
+		}else{
+			this.num=num=1;
+		}
+	}
+	
+	
+	
+}

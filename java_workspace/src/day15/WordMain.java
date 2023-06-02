@@ -1,0 +1,46 @@
+package day15;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class WordMain {
+
+	public static void main(String[] args) throws IOException {
+		WordManager wm = new WordManager();
+		Scanner sc = new Scanner(System.in);
+		int menu = 0;
+		
+		do {			
+			System.out.println();
+			System.out.println(">>메뉴선택");
+			System.out.println("1.단어추가");
+			System.out.println("2.단어출력");
+			System.out.println("3.단어검색");
+			System.out.println("4.단어수정");
+			System.out.println("5.단어삭제");
+			System.out.println("6.파일로 단어출력");
+			System.out.println("7.종료");
+			System.out.println(">> 선택:");			
+			menu = sc.nextInt();
+			
+			switch(menu) {
+			case 1: wm.insertword(sc);
+				break;
+			case 2: wm.printword();				
+				break;
+			case 3: wm.searchword(sc);				 
+				break;
+			case 4: wm.updateword(sc);
+				break;
+			case 5: wm.deleteword(sc);
+				break;
+			case 6: System.out.println("단어장 종료.");
+			break;				
+				default:
+					System.out.println("잘못된 메뉴입니다.");					
+			}			
+		}while(menu!=6);
+		sc.close();
+	}
+
+}

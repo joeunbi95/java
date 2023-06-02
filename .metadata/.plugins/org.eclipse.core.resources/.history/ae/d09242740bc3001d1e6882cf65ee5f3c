@@ -1,0 +1,47 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Foodmanager implements Productinterface{
+	
+	private ArrayList<product> menuList = new ArrayList<>();
+	private ArrayList<product> order = new ArrayList<>();	
+	
+	public void addmenu() {
+		menuList.add(new product("햄버거",7000));
+		menuList.add(new product("피자",15000));
+		menuList.add(new product("콜라",2000));
+		menuList.add(new product("치킨너겟",2000));
+		menuList.add(new product("소프트콘",500));
+	}
+	
+	//메뉴추가
+	@Override
+	public void add(Scanner sc) {
+		System.out.println("추가할 메뉴>");	
+		String menu = sc.next();
+		System.out.println("추가할 메뉴 가격>");
+		int price = sc.nextInt();
+		menuList.add(new product(menu,price));			
+	}	
+
+	@Override
+	public void menuorder(String name, int count) {
+		
+	}
+	
+	@Override
+	public void ordertotal() {
+		
+	}
+
+	@Override
+	public void printmenu() {
+		for(int i=0; i<menuList.size(); i++) {
+			System.out.println(menuList.get(i).getMenu());
+		}
+		
+	}
+	
+}

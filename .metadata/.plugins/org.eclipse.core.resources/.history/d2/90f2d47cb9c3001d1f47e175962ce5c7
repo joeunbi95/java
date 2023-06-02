@@ -1,0 +1,18 @@
+package StudentProgrem;
+
+import java.util.ArrayList;
+
+public class Student {
+	/* 학생클래스 : 한 학생의 정보를 나타내는 클래스 
+	- 학번, 이름, 주민번호, 학부, 학과, 수강과목	  
+	- 생성자, getter/setter, 출력메서드(print) - 2가지 형태로
+	*/
+	
+	private String stdNum;
+	private String stdName;
+	private String registerNum;
+	private String faculty;
+	private String major;
+	private ArrayList<Student> List = new ArrayList<>();
+	
+}

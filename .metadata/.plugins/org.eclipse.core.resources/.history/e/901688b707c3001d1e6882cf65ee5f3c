@@ -1,0 +1,10 @@
+package product;
+
+import java.util.Scanner;
+
+public interface Probuctinterface {
+	void add(Scanner scan); 
+	void mainmenu(); 	
+	void menuorder(String name, int count);
+	void ordertotal();
+}

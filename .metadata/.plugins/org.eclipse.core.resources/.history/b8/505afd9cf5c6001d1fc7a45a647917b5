@@ -1,0 +1,21 @@
+package day15;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public interface WordInterface {
+	/*	1.단어추가 
+		2.단어출력(추가된 모든 단어를 출력 -정렬해서(word를 기준으로)
+		3.단어검색
+		4.단어수정
+		5.단어삭제
+		6.파일로출력		
+		7.종료
+	*/	
+	void insertword(Scanner sc); //단어추가
+	void printword(); //단어출력
+	void searchword(Scanner sc); //단어검색
+	void updateword(Scanner sc); //단어수정
+	void deleteword(Scanner sc); //단어삭제
+	void filePrint() throws IOException; //파일로출력
+}

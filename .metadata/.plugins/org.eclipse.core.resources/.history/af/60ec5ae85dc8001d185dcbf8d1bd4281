@@ -1,0 +1,21 @@
+package 과제;
+
+import java.util.Scanner;
+
+public class 시험 {
+
+	public static void main(String[] args) {
+		
+		int inNum;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수를 입력하시오");
+		inNum = sc.nextInt();
+		if(inNum%2==0) {
+			System.out.println(inNum + "은 짝수");
+		}else {
+			System.out.println(inNum + "은 홀수");		
+		}
+		sc.close();
+	}
+
+}

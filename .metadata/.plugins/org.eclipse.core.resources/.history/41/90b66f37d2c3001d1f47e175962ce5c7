@@ -1,0 +1,61 @@
+package StudentProgrem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import product.ProductInterface;
+
+public class ProductManagers implements ProgreemInterface{
+	
+	private ArrayList<Students> std = new ArrayList<>(); 
+
+	
+	
+	public void printStudentOne(Students s) {
+		System.out.println("--학생정보--");
+		s.stdPrint();
+		System.out.println("--수강정보--");
+		s.subPrint();
+	}
+
+
+
+	@Override
+	public void printStudent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void insertStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void searchStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void registerSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void deleteSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

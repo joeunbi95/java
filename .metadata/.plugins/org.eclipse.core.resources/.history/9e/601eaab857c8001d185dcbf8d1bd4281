@@ -1,0 +1,71 @@
+package 시험;
+
+import day09.Card;
+
+public class CardPack2 {
+	/* Card2 클래스를 생성 후 전체 카드의 내용을 출력하는 프로그램을 작성하시오
+	 *  - CardPack2클래스 : 카드 전체를 나타내는 클래스
+	 */
+	
+	private Card2[] pack = new Card2[52]; //카드 팩 배열
+	private int cnt;
+	
+	public CardPack2() {
+		char shape='♥'; //◆♣♥♠
+		for(int i=1; i<=4; i++) {
+			switch(i) {
+			case 1 :shape='♥'; break;
+			case 2 :shape='◆'; break;
+			case 3 :shape='♣'; break;
+			case 4 :shape='♠'; break;
+			}
+			for(int j=1; j<=13; j++) {
+				Card2 c=new Card2();
+				c.setShape(shape);
+				c.setNum(j);
+				pack[cnt] =c;   //shape = ♥,
+				cnt++;
+			}			
+		}		
+	}
+	
+	public Card2 pick(){
+		if(cnt==0) {
+			return null;
+		}
+		cnt--;
+		return pack[cnt];				
+	}
+	
+	public void CardPack2Print() {
+		for(int i=1; i<=4; i++) {
+			for(int j=1; j<=13; j++) {
+				Card2 tmp= pick();
+				tmp.printCard2();
+			}
+			System.out.println();
+		}
+	}
+	
+
+	public Card2[] getPack() {
+		return pack;
+	}
+
+	public void setPack(Card2[] pack) {
+		this.pack = pack;
+	}
+
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+
+	
+	
+	
+	
+}
